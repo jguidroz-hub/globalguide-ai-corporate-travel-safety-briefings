@@ -28,9 +28,9 @@ export default function DashboardPage() {
 
       <h2 className="text-lg font-semibold mb-4">Quick Access</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
-          <a href="/dashboard/trips" className="block p-4 border rounded-lg hover:bg-blue-50 transition">
+          <a href="/dashboard/travelTrips" className="block p-4 border rounded-lg hover:bg-blue-50 transition">
             <h3 className="font-medium">Upcoming Travel Destinations</h3>
-            <p className="text-sm text-gray-500">Manage and track employee international trips</p>
+            <p className="text-sm text-gray-500">Manage and track employee international travelTrips</p>
           </a>
           <a href="/dashboard/safetyBriefings" className="block p-4 border rounded-lg hover:bg-blue-50 transition">
             <h3 className="font-medium">Safety Intelligence</h3>

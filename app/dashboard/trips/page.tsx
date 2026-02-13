@@ -17,7 +17,7 @@ export default function TripsPage() {
   const [newTitle, setNewTitle] = useState('');
 
   useEffect(() => {
-    fetch('/api/trips')
+    fetch('/api/travelTrips')
       .then(r => r.json())
       .then(data => { setItems(data.items || []); setLoading(false); })
       .catch(() => setLoading(false));
@@ -25,7 +25,7 @@ export default function TripsPage() {
 
   const handleCreate = async () => {
     if (!newTitle.trim()) return;
-    const res = await fetch('/api/trips', {
+    const res = await fetch('/api/travelTrips', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ title: newTitle }),
@@ -39,7 +39,7 @@ export default function TripsPage() {
   };
 
   const handleDelete = async (id: string) => {
-    await fetch(`/api/trips/${id}`, { method: 'DELETE' });
+    await fetch(`/api/travelTrips/${id}`, { method: 'DELETE' });
     setItems(prev => prev.filter(i => i.id !== id));
   };
 
@@ -61,7 +61,7 @@ export default function TripsPage() {
         </button>
       </div>
 
-      <p className="text-gray-600 mb-6">Manage and track employee international trips</p>
+      <p className="text-gray-600 mb-6">Manage and track employee international travelTrips</p>
 
       {showCreate && (
         <div className="mb-6 p-4 border rounded-lg bg-gray-50">
