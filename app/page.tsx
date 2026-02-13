@@ -4,7 +4,7 @@ export default function HomePage() {
       {/* Hero */}
       <section className="max-w-4xl mx-auto px-6 py-20 text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">GlobalGuide AI - Corporate Travel Safety Briefings</h1>
-        <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">Value Proposition: Provides personalized, real-time health and safety briefings for employees traveling internationally. Covers local customs, safety zones, medical advice, and emergency contacts, reducing corporate travel risk and ensuring employee well-being.
+        <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">Value Proposition: Provides personalized, real-time health and safety safetyBriefings for employees traveling internationally. Covers local customs, safety zones, medical advice, and emergency contacts, reducing corporate travel risk and ensuring employee well-being.
 
 Target Customer: HR departments, corporate travel managers, and risk management teams in SMBs and enterprises that regularly send employees for international business travel.
 

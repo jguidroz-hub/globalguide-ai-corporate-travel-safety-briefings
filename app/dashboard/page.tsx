@@ -32,7 +32,7 @@ export default function DashboardPage() {
             <h3 className="font-medium">Upcoming Travel Destinations</h3>
             <p className="text-sm text-gray-500">Manage and track employee international trips</p>
           </a>
-          <a href="/dashboard/briefings" className="block p-4 border rounded-lg hover:bg-blue-50 transition">
+          <a href="/dashboard/safetyBriefings" className="block p-4 border rounded-lg hover:bg-blue-50 transition">
             <h3 className="font-medium">Safety Intelligence</h3>
             <p className="text-sm text-gray-500">Detailed AI-generated travel safety reports</p>
           </a>

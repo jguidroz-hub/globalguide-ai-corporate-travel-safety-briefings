@@ -39,7 +39,7 @@ export const travelTrips = pgTable('travel_trips', {
   updatedAt: timestamp('updated_at').notNull().default(sql`now()`),
 });
 
-// AI-generated safety briefings per trip
+// AI-generated safety safetyBriefings per trip
 export const safetyBriefings = pgTable('safety_briefings', {
   id: text('id').primaryKey().notNull(),
   tripId: text('trip_id').notNull().references(() => travelTrips.id, { onDelete: 'cascade' }),

@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { auth } from '@/lib/auth';
 import { db } from '@/lib/db';
-import { briefings } from '@/lib/domain-schema';
+import { safetyBriefings } from '@/lib/domain-schema';
 import { eq, desc } from 'drizzle-orm';
 import { randomUUID } from 'crypto';
 
@@ -14,9 +14,9 @@ export async function GET(request: Request) {
   const ip = request.headers.get('x-forwarded-for') || 'unknown';
   // Rate limit: 50 per 1min
 
-  const items = await db.select().from(briefings)
-    .where(eq(briefings.userId, session.user.id))
-    .orderBy(desc(briefings.createdAt))
+  const items = await db.select().from(safetyBriefings)
+    .where(eq(safetyBriefings.userId, session.user.id))
+    .orderBy(desc(safetyBriefings.createdAt))
     .limit(100);
 
   return NextResponse.json({ items, count: items.length });
@@ -29,7 +29,7 @@ export async function POST(request: Request) {
   const body = await request.json();
   const id = randomUUID();
 
-  const [item] = await db.insert(briefings).values({
+  const [item] = await db.insert(safetyBriefings).values({
     id,
     userId: session.user.id,
     ...body,

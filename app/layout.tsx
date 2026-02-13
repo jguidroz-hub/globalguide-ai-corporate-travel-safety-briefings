@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'GlobalGuide AI - Corporate Travel Safety Briefings',
-  description: 'Value Proposition: Provides personalized, real-time health and safety briefings for employees traveling internationally. Covers local customs, safety zones, medical advice, and emergency contacts, reducing corporate travel risk and ensuring employee well-being.',
+  description: 'Value Proposition: Provides personalized, real-time health and safety safetyBriefings for employees traveling internationally. Covers local customs, safety zones, medical advice, and emergency contacts, reducing corporate travel risk and ensuring employee well-being.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
