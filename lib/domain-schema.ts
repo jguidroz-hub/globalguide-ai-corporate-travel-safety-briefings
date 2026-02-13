@@ -5,6 +5,7 @@ import { users } from './schema';
 // Per-user preferences and settings
 export const userSettings = pgTable('user_settings', {
   id: text('id').primaryKey(),
+  userId: text('user_id').notNull(),
   userId: text('user_id').notNull().unique().references(() => users.id, { onDelete: 'cascade' }),
   timezone: text('timezone').default('UTC'),
   emailNotifications: boolean('email_notifications').default(true),
@@ -16,6 +17,7 @@ export const userSettings = pgTable('user_settings', {
 // Tracks important state changes for debugging and compliance
 export const auditLog = pgTable('audit_log', {
   id: text('id').primaryKey(),
+  userId: text('user_id').notNull(),
   userId: text('user_id').references(() => users.id, { onDelete: 'set null' }),
   action: text('action').notNull(),
   entityType: text('entity_type').notNull(),
@@ -28,6 +30,7 @@ export const auditLog = pgTable('audit_log', {
 // Corporate employee international travel details
 export const travelTrips = pgTable('travel_trips', {
   id: text('id').primaryKey().notNull(),
+  userId: text('user_id').notNull(),
   userId: text('user_id').notNull().references(() => users.id, { onDelete: 'cascade' }),
   destinationCountry: text('destination_country').notNull(),
   startDate: timestamp('start_date').notNull(),
@@ -42,6 +45,7 @@ export const travelTrips = pgTable('travel_trips', {
 // AI-generated safety safetyBriefings per trip
 export const safetyBriefings = pgTable('safety_briefings', {
   id: text('id').primaryKey().notNull(),
+  userId: text('user_id').notNull(),
   tripId: text('trip_id').notNull().references(() => travelTrips.id, { onDelete: 'cascade' }),
   medicalAdvice: jsonb('medical_advice').notNull(),
   localCustoms: jsonb('local_customs').notNull(),
